@@ -1,0 +1,28 @@
+@font-face {
+    font-family: "NeueMachina-Light";
+    src: url(./NeueMachina-Light.otf);
+}
+@font-face {
+    font-family: "NeueMachina-Bold";
+    src: url(./NeueMachina-Bold.otf);
+}
+@font-face {
+    font-family: "NeueMachina-Black";
+    src: url(./NeueMachina-Black.otf);
+}
+@font-face {
+    font-family: "NeueMachina-Medium";
+    src: url(./NeueMachina-Medium.otf);
+}
+@font-face {
+    font-family: "NeueMachina-Ultralight";
+    src: url(./NeueMachina-Ultralight.otf);
+}
+@font-face {
+    font-family: "NeueMachina-Ultrabold";
+    src: url(./NeueMachina-Ultrabold.otf);
+}
+@font-face {
+    font-family: "NeueMachina-Regular";
+    src: url(./NeueMachina-Regular.otf);
+}
