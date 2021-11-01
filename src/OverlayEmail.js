@@ -18,7 +18,8 @@ function OverlayEmail() {
         color: 'black',
         fontSize: '12vw',
         outline: 'none',
-        zIndex: '1',
+        zIndex: '10',
+        position: 'relative'
     };
 
     const main = {
