@@ -34,27 +34,28 @@ class Clock extends Component {
   render() {
       const clockDiv = {
         display: 'flex',
-        fontSize: '4.4vw',
+        fontSize: '3.5vw',
         textDecoration: 'underline',
-        marginLeft: '.5%'
+        marginLeft: '0'
       }
       const whiteText = {
           color: 'white',
-          textDecoration: 'underline white'
+          textDecoration: 'underline white',
+          fontSize: '5vw'
       }
     return (
       <div style={clockDiv}>
         <div className="Clock-days">
-            <span style={whiteText}>{this.leading0(this.state.days)}</span> Days &nbsp;
+            <span style={whiteText}>{this.leading0(this.state.days)}</span> DAYS &nbsp;
         </div>
         <div className="Clock-hours">
-          <span style={whiteText}>{this.leading0(this.state.hours)}</span> Hours &nbsp;
+          <span style={whiteText}>{this.leading0(this.state.hours)}</span> HOURS &nbsp;
         </div>
         <div className="Clock-minutes">
-          <span style={whiteText}>{this.leading0(this.state.minutes)}</span> Minutes &nbsp;
+          <span style={whiteText}>{this.leading0(this.state.minutes)}</span> MINUTES &nbsp;
         </div>
         <div className="Clock-seconds">
-          <span style={whiteText}>{this.leading0(this.state.seconds)}</span> Seconds
+          <span style={whiteText}>{this.leading0(this.state.seconds)}</span> SECONDS
         </div>
       </div>
     );

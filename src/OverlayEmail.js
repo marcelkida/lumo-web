@@ -6,7 +6,7 @@ import matchbox from './images/matchbox.png';
 import './style/fonts.css';
 import './style/modal.css';
 
-function OverlayBurn() {
+function OverlayEmail() {
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
@@ -16,11 +16,7 @@ function OverlayBurn() {
         border: 'none',
         fontFamily: 'NeueMachina-Regular',
         color: 'black',
-        fontSize: '6vw',
-        position: 'absolute',
-        right: '0',
-        paddingTop: '0',
-        marginTop: '-2%',
+        fontSize: '12vw',
         outline: 'none',
         zIndex: '1',
     };
@@ -36,8 +32,7 @@ function OverlayBurn() {
     };
 
     const matchStyle = {
-        width: '100%',
-        userDrag: 'none'
+        width: '100%'
     };
 
     const content = {
@@ -65,7 +60,7 @@ function OverlayBurn() {
     <div>
         <>
       <Button variant="primary" onClick={handleShow} style={buttonStyle} className='btn'>
-        +
+        *
       </Button>
 
       <Modal show={show} onHide={handleClose} className="special-modal" size="lg">
@@ -97,4 +92,4 @@ function OverlayBurn() {
   );
 }
 
-export default OverlayBurn;
+export default OverlayEmail;

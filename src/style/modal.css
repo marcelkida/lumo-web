@@ -1,0 +1,10 @@
+.special-modal .modal-content {
+    background-color: #A41B1B;
+    background-image: url(../images/background.jpeg);
+    image-rendering: -webkit-optimize-contrast;
+    background-size: cover;
+}
+.btn:focus,.btn:active {
+    outline: none !important;
+    box-shadow: none !important;
+ }

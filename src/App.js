@@ -1,18 +1,16 @@
 import './App.css';
 import bg from "./images/background.jpeg";
 import flame from './images/flame.png';
-import DateCountdown from 'react-date-countdown-timer';
 import './style/fonts.css';
 import Count from "./Count";
-import Button from 'react-bootstrap/Button';
-import Overlay from 'react-bootstrap/Overlay';
+import OverlayBurn from "./OverlayBurn";
+import OverlayEmail from './OverlayEmail';
+import Matchbox from './images/matchbox.png';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import React, { Component, useState, useRef } from "react";
 
 
 function App() {
-
-  const [show, setShow] = useState(false);
-  const target = useRef(null);
 
   const main = {
     width: '100%',
@@ -24,62 +22,102 @@ function App() {
     backgroundPosition: 'center',
     backgroundImage: `url(${bg})`,
     fontFamily: 'NeueMachina-Regular',
-    padding: '0.5%'
+    padding: '0.5%',
+    color: 'black',
+    userSelect: 'none',
   };
 
   const subheader = {
-    fontSize: '',
-    marginLeft: '.5%'
+    fontSize: '3vw',
+    marginLeft: '.5%',
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'flex-end'
+  };
+
+  const plus = {
+    marginLeft: 'auto',
   };
 
   const header = {
     fontSize: "12vw",
     textAlign: 'left',
     lineHeight: '.9',
+    display: 'flex'
   };
 
   const flameStyle = {
     width: '20%'
   };
 
+  const matchStyle = {
+    position: 'relative',
+    height: '100vh',
+    userSelect: 'none',
+    cursor: 'grab',
+    userDrag: 'none'
+  };
+
   const firstSection = {
     display: "flex",
   };
+
+  const elemRef = useRef(null)
+  const dragProps = useRef()
+  
+  const initialiseDrag = event => {
+    const { target, clientX, clientY } = event
+    const { offsetTop, offsetLeft } = target
+    const { left, top } = elemRef.current.getBoundingClientRect()
+    
+    dragProps.current = {
+      dragStartLeft: left - offsetLeft,
+      dragStartTop: top - offsetTop,
+      dragStartX: clientX,
+      dragStartY: clientY
+    }
+    window.addEventListener('mousemove', startDragging, false)
+    window.addEventListener('mouseup', stopDragging, false)
+  }
+  
+  
+  const startDragging = ({ clientX, clientY }) => {    
+    elemRef.current.style.transform = `translate(${dragProps.current.dragStartLeft + clientX - dragProps.current.dragStartX}px, ${dragProps.current.dragStartTop + clientY - dragProps.current.dragStartY}px)`
+  } 
+
+  const stopDragging = () => {
+    window.removeEventListener('mousemove', startDragging, false)
+    window.removeEventListener('mouseup', stopDragging, false)
+  }
+
   return (
-    <div className="App" style={main}>
+    <div style={main}>
+      
       <div style={firstSection}>
+        
         <img src={flame} alt="flame" style={flameStyle}/>
         <div style={subheader}>
         NEXT BURN IN;
         </div>
-
-        <Button variant="danger" ref={target} onClick={() => setShow(!show)}>
-        Click me to see
-      </Button>
-      <Overlay target={target.current} show={show} placement="right">
-        {({ placement, arrowProps, show: _show, popper, ...props }) => (
-          <div
-            {...props}
-            style={{
-              backgroundColor: 'rgba(255, 100, 100, 0.85)',
-              padding: '2px 10px',
-              color: 'white',
-              borderRadius: 3,
-              ...props.style,
-            }}
-          >
-            Simple tooltip
-          </div>
-        )}
-      </Overlay>
-
+        <div style={plus}>
+          <OverlayBurn/>
+        </div>
       </div>
+
       <div>
         <Count/>
       </div>
       <div style={header}>
-        DESTRUCTION BREEDS CREATION
+        DESTRUCTION BREEDS CREATION.
+        <OverlayEmail/>
       </div>
+      <div style={{position: 'relative', top: '-80vh'}}>
+      <img src={Matchbox}       
+      onMouseDown={initialiseDrag}
+      ref={elemRef}
+      style={matchStyle}
+      draggable='false'></img>
+    </div>
     </div>
   );
 }
