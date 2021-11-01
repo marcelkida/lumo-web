@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 
 class Clock extends Component {
+
   constructor(props) {
     super(props);
     this.state = {
@@ -10,15 +11,19 @@ class Clock extends Component {
       seconds: 0
     };
   }
+
   componentWillMount() {
     this.getTimeUntil(this.props.deadline);
   }
+
   componentDidMount() {
     setInterval(() => this.getTimeUntil(this.props.deadline), 1000);
   }
+
   leading0(num) {
     return num < 10 ? "0" + num : num;
   }
+
   getTimeUntil(deadline) {
     const time = Date.parse(deadline) - Date.parse(new Date());
     if (time < 0) {
@@ -31,7 +36,9 @@ class Clock extends Component {
       this.setState({ days, hours, minutes, seconds });
     }
   }
+
   render() {
+
       const clockDiv = {
         display: 'flex',
         fontSize: '3.5vw',
@@ -39,12 +46,14 @@ class Clock extends Component {
         textDecorationThickness: '.8vh',
         marginLeft: '0'
       }
+
       const whiteText = {
           color: 'white',
           textDecoration: 'underline white',
           textDecorationThickness: '.8vh',
           fontSize: '5vw'
       }
+      
     return (
       <div style={clockDiv}>
         <div className="Clock-days">
@@ -63,4 +72,5 @@ class Clock extends Component {
     );
   }
 }
+
 export default Clock;
