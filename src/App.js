@@ -22,6 +22,7 @@ function App() {
     backgroundPosition: 'center',
     backgroundImage: `url(${bg})`,
     fontFamily: 'NeueMachina-Regular',
+    letterSpacing: '-0.1em',
     padding: '0.5%',
     color: 'black',
     userSelect: 'none',
@@ -43,7 +44,8 @@ function App() {
     fontSize: "12vw",
     textAlign: 'left',
     lineHeight: '.9',
-    display: 'flex'
+    display: 'flex',
+    fontFamily: 'NeueMachina-Medium',
   };
 
   const flameStyle = {

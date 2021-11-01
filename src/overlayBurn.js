@@ -26,17 +26,20 @@ function OverlayBurn() {
     };
 
     const main = {
-        margin: '1%'
+        margin: '1%',
     }
 
     const headerStyle = {
         fontFamily: 'NeueMachina-Medium',
         color: 'black',
-        fontSize: '6vw'
+        fontSize: '6vw',
+        lineHeight: '.9',
+        marginBottom: '4vh',
+        letterSpacing: '-0.05em',
     };
 
     const matchStyle = {
-        width: '100%',
+        width: '50%',
         userDrag: 'none'
     };
 
@@ -59,6 +62,12 @@ function OverlayBurn() {
         textIndent: '1vw',
         marginBottom: '2vh'
     };
+    
+    const rhs = {
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center'
+    }
   
   return (
       
@@ -74,10 +83,10 @@ function OverlayBurn() {
                 *BURN TO BUILD <br></br> *INVITE TO CREATE
             </div>
             <div style={content}>
-                <div>
-                    <img src={matchbox } style={matchStyle}></img>
+                <div style={{width: '200%', display: 'flex', justifyContent: 'center'}}>
+                    <img src={matchbox} style={matchStyle}></img>
                 </div>
-                <div>
+                <div style={rhs}>
                     <div style={contentHeader}>
                         *WHAT IS A BURN EVENT?
                     </div>
