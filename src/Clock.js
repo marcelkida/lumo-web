@@ -36,11 +36,13 @@ class Clock extends Component {
         display: 'flex',
         fontSize: '3.5vw',
         textDecoration: 'underline',
+        textDecorationThickness: '.8vh',
         marginLeft: '0'
       }
       const whiteText = {
           color: 'white',
           textDecoration: 'underline white',
+          textDecorationThickness: '.8vh',
           fontSize: '5vw'
       }
     return (
