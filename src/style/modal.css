@@ -4,7 +4,40 @@
     image-rendering: -webkit-optimize-contrast;
     background-size: cover;
 }
+
+.email-modal .modal-content {
+    background-color: black;
+    image-rendering: -webkit-optimize-contrast;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
 .btn:focus,.btn:active {
     outline: none !important;
     box-shadow: none !important;
+ }
+ .fillWidth {
+
+ }
+ #tooltip-top > .tooltip-inner {
+    background-color: black;
+    font-family: 'NeueMachina-Regular';
+    color: white;
+    font-size: 2vmax;
+    max-width: 100% !important;
+    
+  }
+  
+  #tooltip-top > .tooltip-arrow {
+    border-top: 5px solid black;
+
+  }
+
+ html{
+    overflow-y: hidden;
+ }
+ ::placeholder{
+     color: white;
  }

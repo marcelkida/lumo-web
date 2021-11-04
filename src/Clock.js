@@ -41,19 +41,20 @@ class Clock extends Component {
 
       const clockDiv = {
         display: 'flex',
-        fontSize: '3.5vw',
+        fontSize: '3.5vmax',
         textDecoration: 'underline',
-        textDecorationThickness: '.8vh',
-        marginLeft: '0'
+        textDecorationThickness: '.4vmax',
+        marginLeft: '0',
+        flexWrap: 'wrap'
       }
 
       const whiteText = {
           color: 'white',
           textDecoration: 'underline white',
-          textDecorationThickness: '.8vh',
-          fontSize: '5vw'
+          textDecorationThickness: '.4vmax',
+          fontSize: '5vmax'
       }
-      
+
     return (
       <div style={clockDiv}>
         <div className="Clock-days">

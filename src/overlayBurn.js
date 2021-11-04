@@ -7,6 +7,7 @@ import './style/fonts.css';
 import './style/modal.css';
 
 function OverlayBurn() {
+    const [fullscreen, setFullscreen] = useState(true);
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
@@ -16,13 +17,13 @@ function OverlayBurn() {
         border: 'none',
         fontFamily: 'NeueMachina-Regular',
         color: 'black',
-        fontSize: '6vw',
+        fontSize: '6vmax',
         position: 'absolute',
         right: '0',
         paddingTop: '0',
         marginTop: '-2%',
         outline: 'none',
-        zIndex: '1',
+        zIndex: '10',
     };
 
     const main = {
@@ -32,35 +33,35 @@ function OverlayBurn() {
     const headerStyle = {
         fontFamily: 'NeueMachina-Medium',
         color: 'black',
-        fontSize: '6vw',
+        fontSize: '6vmax',
         lineHeight: '.9',
         marginBottom: '4vh',
         letterSpacing: '-0.05em',
     };
 
     const matchStyle = {
-        width: '50%',
+        width: '15vmax',
+        height: 'auto',
         userDrag: 'none'
     };
 
     const content = {
         display: 'flex',
-
     };
 
     const contentHeader = {
         fontFamily: 'NeueMachina-Bold',
         color: 'black',
-        fontSize: '1.5vw',
-        marginBottom: '4vh'
+        fontSize: '1.5vmax',
+        marginBottom: '4vmax'
     };
 
     const paragraph = {
         fontFamily: 'NeueMachina-Regular',
         color: 'white',
-        fontSize: '1.2vw',
-        textIndent: '1vw',
-        marginBottom: '2vh'
+        fontSize: '1.2vmax',
+        textIndent: '1vmax',
+        marginBottom: '2vmax'
     };
     
     const rhs = {
@@ -77,7 +78,9 @@ function OverlayBurn() {
         +
       </Button>
 
-      <Modal show={show} onHide={handleClose} className="special-modal" size="lg">
+      <Modal show={show} onHide={handleClose} className="special-modal" size='xl'>
+      <Modal.Header closeButton style={{border: 'none'}}>
+        </Modal.Header>
         <div style={main}>
             <div style={headerStyle}>
                 *BURN TO BUILD <br></br> *INVITE TO CREATE

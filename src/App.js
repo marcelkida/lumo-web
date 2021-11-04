@@ -8,13 +8,15 @@ import OverlayEmail from './OverlayEmail';
 import Matchbox from './images/matchbox.png';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import React, { Component, useState, useRef } from "react";
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+
 
 
 function App() {
 
   const main = {
     width: '100%',
-    height: '100vh',
+    height: '100%',
     position: 'fixed',
     left: '0',
     backgroundSize: 'cover',
@@ -26,10 +28,13 @@ function App() {
     padding: '0.5%',
     color: 'black',
     userSelect: 'none',
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center'
   };
 
   const subheader = {
-    fontSize: '3vw',
+    fontSize: '3vmax',
     marginLeft: '.5%',
     display: 'flex',
     flexDirection: 'column',
@@ -37,7 +42,7 @@ function App() {
   };
 
   const plus = {
-    marginLeft: 'auto',
+
   };
 
   const header = {
@@ -49,12 +54,12 @@ function App() {
   };
 
   const flameStyle = {
-    width: '20%'
+    width: '20vmax'
   };
 
   const matchStyle = {
     position: 'relative',
-    height: '100vh',
+    height: '100vmin',
     userSelect: 'none',
     cursor: 'grab',
     userDrag: 'none'
@@ -93,6 +98,7 @@ function App() {
   }
 
   return (
+    <div>
     <div style={main}>
       
       <div style={firstSection}>
@@ -102,7 +108,7 @@ function App() {
         NEXT BURN IN;
         </div>
         <div style={plus}>
-          <OverlayBurn/>
+          <OverlayBurn />
         </div>
       </div>
 
@@ -113,12 +119,14 @@ function App() {
         DESTRUCTION BREEDS CREATION.
         <OverlayEmail/>
       </div>
-      <div style={{position: 'relative', top: '-80vh'}}>
+      </div>
+      <div >
       <img src={Matchbox}       
       onMouseDown={initialiseDrag}
       ref={elemRef}
       style={matchStyle}
-      draggable='false'></img>
+      draggable='false'
+      className='d-none d-lg-block'></img>
     </div>
     </div>
   );

@@ -26,3 +26,8 @@
     font-family: "NeueMachina-Regular";
     src: url(./NeueMachina-Regular.otf);
 }
+.match{
+    @media (max-width: 767px) {
+        display: "none" !important;
+      }
+}

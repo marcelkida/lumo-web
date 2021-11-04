@@ -1,16 +1,22 @@
 import bg from "./images/background.jpeg";
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
+import Overlay from 'react-bootstrap/Overlay';
+import Tooltip from 'react-bootstrap/Tooltip'
 import React, { Component, useState, useRef } from "react";
 import matchbox from './images/matchbox.png';
 import './style/fonts.css';
 import './style/modal.css';
 
 function OverlayEmail() {
-    
+
+    const [fullscreen, setFullscreen] = useState(true);
     const [show, setShow] = useState(false);
+    const [showTip, setShowTip] = useState(false);
+
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
+    const target = useRef(null);
 
     const buttonStyle = {
         background: 'none',
@@ -23,40 +29,74 @@ function OverlayEmail() {
         position: 'relative'
     };
 
+    const submitStyle = {
+        background: 'none',
+        border: '2px solid white    ',
+        borderRadius: '3em',
+        fontFamily: 'NeueMachina-Regular',
+        color: 'white',
+        fontSize: '2vmax',
+        outline: 'none',
+    };
+
     const main = {
-        margin: '1%'
+        margin: '1%',
+        display: 'flex',
+        flexDirection: 'column',
+
+        height: '100%'
     }
 
     const headerStyle = {
         fontFamily: 'NeueMachina-Medium',
         color: 'black',
-        fontSize: '6vw'
+        fontSize: '8.5 vw'
     };
 
     const matchStyle = {
         width: '100%'
     };
 
-    const content = {
-        display: 'flex',
-
-    };
-
     const contentHeader = {
         fontFamily: 'NeueMachina-Bold',
-        color: 'black',
-        fontSize: '1.5vw',
+        color: 'white',
+        fontSize: '3vw',
         marginBottom: '4vh'
     };
 
     const paragraph = {
         fontFamily: 'NeueMachina-Regular',
         color: 'white',
-        fontSize: '1.2vw',
-        textIndent: '1vw',
-        marginBottom: '2vh'
+        fontSize: '2vmax',
     };
-  
+    const inputStyle= {
+        boxSizing: "border-box",
+        width: "100%",
+        fontSize: '8.5vmax',
+        background: 'none',
+        color: "white",
+        border: '0px',
+        outline: 'none',
+        boxShadow: 'none'
+    };
+
+    const hrStyle = {
+        height: '.5vmax',
+        color: 'white',
+        border: 'white',
+        background: 'white'
+    };
+
+    const mainSection = {
+        display: 'flex',
+        justifyContent: 'space-between',
+        flexDirection: 'column',
+        height: '100%'
+    }
+    const submitSection = {
+
+    }
+
   return (
       
     <div>
@@ -65,27 +105,37 @@ function OverlayEmail() {
         *
       </Button>
 
-      <Modal show={show} onHide={handleClose} className="special-modal" size="lg">
-        <div style={main}>
-            <div style={headerStyle}>
-                *BURN TO BUILD <br></br> *INVITE TO CREATE
+      <Modal show={show} onHide={handleClose} className="email-modal" fullscreen={fullscreen}>
+        <Modal.Header closeButton style={{border: 'none'}}>
+        <div style={contentHeader}>
+                SIGN UP FOR EXCLUSIVE ACCESS TO LUMO *
             </div>
-            <div style={content}>
+        </Modal.Header>
+        <div style={main}>
+        <div style={mainSection}>
+
+            
                 <div>
-                    <img src={matchbox } style={matchStyle}></img>
+                <hr style={hrStyle}/>
+                <div style={headerStyle} className="fillWidth">
+                    <input style={inputStyle} type="email" placeholder="NAME@EMAIL.COM"/>               
                 </div>
-                <div>
-                    <div style={contentHeader}>
-                        *WHAT IS A BURN EVENT?
+                <hr style={hrStyle}/>
+            </div>
+                <div style={submitSection}>
+                    <Button style={submitStyle} ref={target} onClick={() => setShowTip(!showTip)}>
+                        SUBMIT
+                    </Button>
+                    <Overlay target={target.current} show={showTip} placement="right" className="email-overlay">
+                        {(props) => (
+                        <Tooltip id="tooltip-top" style={paragraph} className="overlay-example" {...props}>
+
+                            SUCCESS, PLEASE CHECK YOUR EMAIL
+
+                        </Tooltip>
+                        )}
+                    </Overlay>
                     </div>
-                    <div style={paragraph}>
-                        The burn event is a ritual that invites and initiate members to join your House. It is a sacred nexus where each individual is called forth to collectively let go of the past, the future, and all those who do not serve to make space for the now and the new.
-                    </div>
-                    <div style={paragraph}>
-                        Your house is a powerful vehicle for change and manifestation, empowering you and your community to create and will the world towards your collective purpose.
-                    </div>
-                    <hr style={{color: 'white', height: '2px'}}></hr>
-                </div>
             </div>
         </div>
       </Modal>
