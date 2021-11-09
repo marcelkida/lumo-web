@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import './style/clock.css';
 
 class Clock extends Component {
 
@@ -42,32 +43,25 @@ class Clock extends Component {
       const clockDiv = {
         display: 'flex',
         fontSize: '3.5vmax',
-        textDecoration: 'underline',
-        textDecorationThickness: '.4vmax',
+        textAlign: 'right',
         marginLeft: '0',
         flexWrap: 'wrap'
       }
 
-      const whiteText = {
-          color: 'white',
-          textDecoration: 'underline white',
-          textDecorationThickness: '.4vmax',
-          fontSize: '5vmax'
-      }
 
     return (
-      <div style={clockDiv}>
+      <div style={clockDiv} className='clockDiv'>
         <div className="Clock-days">
-            <span style={whiteText}>{this.leading0(this.state.days)}</span> DAYS &nbsp;
+            <span className='whiteText'>{this.leading0(this.state.days)}</span> DAYS &nbsp;
         </div>
         <div className="Clock-hours">
-          <span style={whiteText}>{this.leading0(this.state.hours)}</span> HOURS &nbsp;
+          <span className='whiteText'>{this.leading0(this.state.hours)}</span> HOURS &nbsp;
         </div>
         <div className="Clock-minutes">
-          <span style={whiteText}>{this.leading0(this.state.minutes)}</span> MINUTES &nbsp;
+          <span className='whiteText'>{this.leading0(this.state.minutes)}</span> MINUTES &nbsp;
         </div>
         <div className="Clock-seconds">
-          <span style={whiteText}>{this.leading0(this.state.seconds)}</span> SECONDS
+          <span className='whiteText'>{this.leading0(this.state.seconds)}</span> SECONDS &nbsp;
         </div>
       </div>
     );
