@@ -74,9 +74,8 @@ function LandingMobile() {
   return (
     <div>
     <div style={main}>
-      
+
       <div style={firstSection}>
-        
         <img src={flame} alt="flame" style={flameStyle}/>
         <div style={subheader}>
         NEXT BURN IN;
@@ -89,6 +88,7 @@ function LandingMobile() {
       <div>
         <Count/>
       </div>
+      
       <div style={secondSection}>      
         <img src={Matchbox} style={matchStyle}></img>
         <div style={header}>

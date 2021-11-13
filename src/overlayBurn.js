@@ -7,7 +7,6 @@ import './style/fonts.css';
 import './style/modal.css';
 
 function OverlayBurn() {
-    const [fullscreen, setFullscreen] = useState(true);
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
@@ -68,7 +67,7 @@ function OverlayBurn() {
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'center'
-    }
+    };
   
   return (
       

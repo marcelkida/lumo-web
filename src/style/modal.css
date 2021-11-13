@@ -18,20 +18,25 @@
     outline: none !important;
     box-shadow: none !important;
  }
- .fillWidth {
 
- }
  #tooltip-top > .tooltip-inner {
-    background-color: black;
+    background-color: transparent;
     font-family: 'NeueMachina-Regular';
     color: white;
     font-size: 2vmax;
     max-width: 100% !important;
     
   }
+
+.email-header .btn-close {
+    color: white !important; 
+    background-color: white;
+    border: white;
+    opacity: 1;
+}
   
   #tooltip-top > .tooltip-arrow {
-    border-top: 5px solid black;
+    border-top: 5px solid transparent;
 
   }
 

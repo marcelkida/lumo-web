@@ -104,30 +104,37 @@ function Landing() {
       <div style={firstSection}>
         
         <img src={flame} alt="flame" style={flameStyle}/>
+
         <div style={subheader}>
         NEXT BURN IN;
         </div>
+
         <div style={plus}>
           <OverlayBurn />
         </div>
+
       </div>
 
       <div>
         <Count/>
       </div>
+
       <div style={header}>
         DESTRUCTION BREEDS CREATION.
         <OverlayEmail/>
       </div>
-      </div>
-      <div >
+
+    </div>
+      <div>
+
       <img src={Matchbox}       
       onMouseDown={initialiseDrag}
       ref={elemRef}
       style={matchStyle}
       draggable='false'
       className='d-none d-lg-block'></img>
-    </div>
+      
+      </div>
     </div>
   );
 }

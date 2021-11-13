@@ -17,6 +17,11 @@ function OverlayEmail() {
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
     const target = useRef(null);
+    
+    //variables for changing text for submit button.
+    var validEmail = true;
+    const [buttonText, setButtonText] = useState("Next");
+    const changeText = (text) => setButtonText(text);   
 
     const buttonStyle = {
         background: 'none',
@@ -45,16 +50,12 @@ function OverlayEmail() {
         flexDirection: 'column',
 
         height: '100%'
-    }
+    };
 
     const headerStyle = {
         fontFamily: 'NeueMachina-Medium',
         color: 'black',
         fontSize: '8.5 vw'
-    };
-
-    const matchStyle = {
-        width: '100%'
     };
 
     const contentHeader = {
@@ -69,10 +70,11 @@ function OverlayEmail() {
         color: 'white',
         fontSize: '2vmax',
     };
+
     const inputStyle= {
         boxSizing: "border-box",
         width: "100%",
-        fontSize: '8.5vmax',
+        fontSize: '8.5vmin',
         background: 'none',
         color: "white",
         border: '0px',
@@ -92,10 +94,12 @@ function OverlayEmail() {
         justifyContent: 'space-between',
         flexDirection: 'column',
         height: '100%'
-    }
+    };
+
     const submitSection = {
 
-    }
+    };
+
 
   return (
       
@@ -106,7 +110,7 @@ function OverlayEmail() {
       </Button>
 
       <Modal show={show} onHide={handleClose} className="email-modal" fullscreen={fullscreen}>
-        <Modal.Header closeButton style={{border: 'none'}}>
+        <Modal.Header className='email-header' closeButton style={{border: 'none'}}>
         <div style={contentHeader}>
                 SIGN UP FOR EXCLUSIVE ACCESS TO LUMO *
             </div>
@@ -123,14 +127,14 @@ function OverlayEmail() {
                 <hr style={hrStyle}/>
             </div>
                 <div style={submitSection}>
-                    <Button style={submitStyle} ref={target} onClick={() => setShowTip(!showTip)}>
+                    <Button style={submitStyle} ref={target} onClick={() => {if (validEmail) {changeText("SUCCESS, CHECK YOUR EMAIL")} else {changeText("INVALID EMAIL")} setShowTip(true)}}>
                         SUBMIT
                     </Button>
                     <Overlay target={target.current} show={showTip} placement="right" className="email-overlay">
                         {(props) => (
                         <Tooltip id="tooltip-top" style={paragraph} className="overlay-example" {...props}>
 
-                            SUCCESS, PLEASE CHECK YOUR EMAIL
+                            {buttonText}
 
                         </Tooltip>
                         )}
