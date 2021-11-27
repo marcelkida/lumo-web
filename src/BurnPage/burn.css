@@ -1,0 +1,73 @@
+
+html{
+    overflow: visible;
+    
+}
+/*Header*/
+.header{
+    display: flex;
+    justify-content: space-between;
+    font-family: NeueMachina-Regular;
+    color: white;
+    background-color: black;
+    height: 10vh;
+    padding: 2%;
+}
+.header-logo{
+
+}
+.header-plus{
+
+}
+
+/*WriteHere*/
+.write{
+    font-family: NeueMachina-Regular;
+    background-color: orangered;
+    height: 90vh;
+    padding: 2%;
+}
+.write-header{
+    display: flex;
+    justify-content: space-between;
+    font-family: NeueMachina-Regular;
+    color: white;
+    height: 10vh;
+
+}
+.write-header-left{
+
+}
+.write-header-right{
+
+}
+.write-inputsection{
+
+}
+.write-input{
+
+}
+
+/*Footer*/
+.footer-body{
+    background-color: red;
+    font-family: NeueMachina-Regular;
+}
+.footer-main{
+    padding: 2%;
+}
+.footer-header{
+    display: flex;
+    justify-content: space-between;
+}
+.footer-footer{
+    display: flex;
+    justify-content: space-between;
+}
+.footer-left{
+    width: 50%;
+}
+.footer-right{
+    display: flex;
+    flex-direction: column;
+}
