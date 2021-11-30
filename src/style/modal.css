@@ -3,6 +3,8 @@
     background-image: url(../images/background.jpeg);
     image-rendering: -webkit-optimize-contrast;
     background-size: cover;
+    width: max(360px, 50%);
+    margin: auto;
 }
 
 .email-modal .modal-content {
@@ -45,4 +47,13 @@
  }
  ::placeholder{
      color: white;
+ }
+ @media only screen and (max-width: 720px) {
+   .submitButton{
+     margin: 5%;
+   }
+   .submitSection{
+     display: flex;
+     justify-content: center;
+   }
  }

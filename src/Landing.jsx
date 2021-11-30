@@ -30,7 +30,7 @@ function Landing() {
     userSelect: 'none',
     display: 'flex',
     flexDirection: 'column',
-    justifyContent: 'center'
+    paddingTop: '3%'
   };
 
   const subheader = {
@@ -62,7 +62,8 @@ function Landing() {
     height: '100vmin',
     userSelect: 'none',
     cursor: 'grab',
-    userDrag: 'none'
+    userDrag: 'none',
+    transform: 'translate(300%)'
   };
 
   const firstSection = {
