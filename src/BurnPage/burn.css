@@ -26,6 +26,8 @@ html{
     background-color: orangered;
     height: 90vh;
     padding: 2%;
+    display: flex;
+    justify-content: space-between;
 }
 .write-header{
     display: flex;
@@ -34,6 +36,12 @@ html{
     color: white;
     height: 10vh;
 
+}
+.write-left{
+    width:46%;
+}
+.write-right{
+    width:46%;
 }
 .write-header-left{
 
@@ -45,6 +53,28 @@ html{
 
 }
 .write-input{
+
+}
+.cube-table{
+    display: grid;
+    grid-template-columns: repeat(30, 1fr);
+    grid-template-rows: repeat(30, 1fr);
+    justify-items: center;
+    align-items: center;
+    width: 40vw;
+    height: 40vw;
+}
+.cube-block{
+    width: 1vw;
+    height: 1vw;
+}
+.incomplete-true{
+    filter: brightness(0) invert(1);
+    height: 1vw;
+
+}
+.incomplete-false{
+    height: 1vw;
 
 }
 
