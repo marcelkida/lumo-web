@@ -23,9 +23,8 @@ html{
 /*WriteHere*/
 .write{
     font-family: NeueMachina-Regular;
-    background-color: orangered;
+    background-color: red;
     height: 90vh;
-    padding: 2%;
     display: flex;
     justify-content: space-between;
 }
@@ -38,10 +37,17 @@ html{
 
 }
 .write-left{
-    width:46%;
+    width: max(46%,500px);
+    margin: 2%;
 }
 .write-right{
-    width:46%;
+    width: max(46%,500px);
+    padding: 2%;
+    background: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 .write-header-left{
 
@@ -61,21 +67,26 @@ html{
     grid-template-rows: repeat(30, 1fr);
     justify-items: center;
     align-items: center;
-    width: 40vw;
-    height: 40vw;
+    width: 30vw;
+    height: 30vw;
 }
 .cube-block{
-    width: 1vw;
-    height: 1vw;
+    width: .8vw;
+    height: .8vw;
 }
 .incomplete-true{
     filter: brightness(0) invert(1);
-    height: 1vw;
+    height: .5vw;
 
 }
 .incomplete-false{
-    height: 1vw;
-
+    height: .5vw;
+    filter: invert(15%) sepia(99%) saturate(6825%) hue-rotate(359deg) brightness(97%) contrast(111%);
+}
+.cube-render{
+    width: 30vw;
+    position: absolute;
+    top: 40%;
 }
 
 /*Footer*/

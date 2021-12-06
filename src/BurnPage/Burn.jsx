@@ -2,7 +2,8 @@ import React, { Component, useState, useRef } from "react";
 import '../../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import { useMediaQuery } from 'react-responsive';
 import './burn.css';
-import '../style/fonts.css'
+import '../style/fonts.css';
+import Placeholder from './images/PlaceholderCube.png'
 
 class Burn extends Component {
   render() {
@@ -92,9 +93,10 @@ class Burn extends Component {
                         src={require('./images/INCOMPLETECUBES/IncompleteCube' + element.number + '.png').default} />
                     </div>))}
                 </div>
+                <img className='cube-render' src={Placeholder}></img>
               </div>
               <div className='write-buttonsection'>
-                <button className='write-button'>GENERATE YOUR NFT</button>
+                {/*<button className='write-button'>GENERATE YOUR NFT</button>*/}
               </div>
             </div>
           </div>
