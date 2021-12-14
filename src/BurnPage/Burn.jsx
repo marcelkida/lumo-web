@@ -72,12 +72,13 @@ class Burn extends Component {
                 </div>
               </div>
               <div className='write-inputsection'>
-                <input type="text"
+                <textarea type="text"
                   value={input}
                   onInput={e => { setInput(e.target.value); updateWordCount(input); randomCubeArray() }}
                   placeholder={placeholderText}
-                  className='write-input'>
-                </input>
+                  className='write-input'
+                  >
+                </textarea>
               </div>
               <div className='write-footer'>
                 ENCRYPTING YOUR MANIFESTATION;
